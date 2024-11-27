@@ -10,6 +10,7 @@ const ExpressError = require('./utils/ExpressError')
 module.exports.validateUserRegister = (req, res, next) => {
     const { error } = userSchema.validate(req.body)
     if (error) {
+        console.log(error);
         const msg = error.details.map(el => el.message).join(', ')
         throw new ExpressError(msg, 400)
     } else {
@@ -31,7 +32,11 @@ module.exports.fetchUser = (req, res, next) => {
     // Get user from jwt token and add id to req object
     const token = req.header('auth-token')
     if (token) {
-        const data = jwt.verify(token, 'b0742345623214e7f5aac75a4200799d80b55d26a62b97cd23015c33ae3ac11513e2e7')
+        const secretKey = process.env.JWT_SECRET_KEY;
+        if (!secretKey) {
+            throw new Error('Secret key is not defined');
+        }
+        const data = jwt.verify(token, secretKey);
         req.user = data.user
         next()
     } else {

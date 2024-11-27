@@ -113,7 +113,7 @@ function Login(props) {
                         />
                     </div>
                     <div className="mb-4">
-                        <FormControl variant="outlined" fullWidth>
+                        <FormControl variant="outlined" fullWidth color='#FFF'>
                             <InputLabel color="secondary" error={Boolean(touched.password && errors.password)} htmlFor="outlined-adornment-password" style={inputLabelProps.style}>Password</InputLabel>
                             <OutlinedInput
                                 id="outlined-adornment-password"

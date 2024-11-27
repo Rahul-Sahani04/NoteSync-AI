@@ -10,6 +10,7 @@ const cors = require('cors')
 
 const authRoute = require('./routes/auth')
 const notesRoute = require('./routes/notes')
+const geminiRoute = require('./routes/gemini');
 
 // express init
 const app = express()
@@ -43,6 +44,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/auth', authRoute)
 app.use('/api/notes', notesRoute)
+app.use('/api/gemini', geminiRoute);
 
 
 // error handling middleware
