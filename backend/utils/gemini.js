@@ -86,6 +86,54 @@ const chatSession = model.startChat({
         },
       ],
     },
+    {
+      role: "user",
+      parts: [
+        {
+          text: "What is your purpose?",
+        },
+      ],
+    },
+    {
+      role: "model",
+      parts: [
+        {
+          text: "I am here to help you with your notes and queries. I can generate human-like text based on the input you provide.",
+        },
+      ],
+    },
+    {
+      role: "user",
+      parts: [
+        {
+          text: "What is the format of notes?",
+        },
+      ],
+    },
+    {
+      role: "model",
+      parts: [
+        {
+          text: "The format of notes is: Title, Description & Tags. The Title has the length of 100 characters, Description has the length of 1000 characters and Tags have the length of 100 characters.",
+        },
+      ],
+    },
+    {
+      role: "user",
+      parts: [
+        {
+          text: "Create a note on the topic of AI",
+        },
+      ],
+    },
+    {
+      role: "model",
+      parts: [
+        {
+          text: "### Title: AI\n\n**Description:**\n\nArtificial Intelligence (AI) is the simulation of human intelligence processes by machines, especially computer systems. These processes include learning (the acquisition of information and rules for using the information), reasoning (using rules to reach approximate or definite conclusions) and self-correction. Particular applications of AI include expert systems, speech recognition and machine vision.\n\n**Tags:** AI, Machine Learning, Deep Learning",
+        },
+      ],
+    },
   ],
 });
 

@@ -172,6 +172,9 @@ function Home() {
                       InputProps={{
                         style: { color: "white" },
                       }}
+                      handleKeyPress={(e) => {
+                        if (e.key === "Enter") handleAskGemini();
+                      }}
                     />
                     <Button
                       onClick={handleAskGemini}
@@ -186,11 +189,6 @@ function Home() {
                       Send
                     </Button>
                   </DrawerFooter>
-                  {/* <DrawerClose>
-                    <Button variant="contained" className="mt-2">
-                      Close
-                    </Button>
-                  </DrawerClose> */}
                 </DrawerContent>
               </Drawer>
             </div>
@@ -207,37 +205,7 @@ function Home() {
             />
           </div>
         </div>
-        {chatVisible && (
-          <div className="chat-panel">
-            <h2>AI Chat</h2>
-            <textarea
-              value={question}
-              onChange={(e) => setQuestion(e.target.value)}
-              placeholder="Ask a question or summarize your notes..."
-              rows="4"
-              cols="50"
-            />
-            <Button
-              onClick={handleAskGemini}
-              variant="contained"
-              color="primary"
-              style={{
-                color: "White",
-                textTransform: "none",
-                fontFamily: "'Poppins', sans-serif'",
-                fontSize: "1.3rem",
-                marginTop: "10px",
-              }}
-            >
-              Send
-            </Button>
-            <div className="response">
-              <h3>Response:</h3>
-              <p>{loading && "Loading..."}</p>
-              <p>{response}</p>
-            </div>
-          </div>
-        )}
+
         <Notes />
       </div>
     </>
