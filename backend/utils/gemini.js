@@ -130,7 +130,7 @@ const chatSession = model.startChat({
       role: "model",
       parts: [
         {
-          text: "### Title: AI\n\n**Description:**\n\nArtificial Intelligence (AI) is the simulation of human intelligence processes by machines, especially computer systems. These processes include learning (the acquisition of information and rules for using the information), reasoning (using rules to reach approximate or definite conclusions) and self-correction. Particular applications of AI include expert systems, speech recognition and machine vision.\n\n**Tags:** AI, Machine Learning, Deep Learning",
+          text: "### **Title**: AI<br/>**Description:**<br/>Artificial Intelligence (AI) is the simulation of human intelligence processes by machines, especially computer systems. These processes include learning (the acquisition of information and rules for using the information), reasoning (using rules to reach approximate or definite conclusions) and self-correction. Particular applications of AI include expert systems, speech recognition and machine vision.<br/>**Tags:** AI, Machine Learning, Deep Learning",
         },
       ],
     },
